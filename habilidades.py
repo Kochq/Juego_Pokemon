@@ -22,7 +22,7 @@ D - Rayo
                 break
             else:
                 print("Opcion Invalida")
-    
+
     elif jugador.name == "Charmander":
         while True:
             print("""Elegir habilidad:

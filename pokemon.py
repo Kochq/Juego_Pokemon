@@ -1,7 +1,7 @@
 import random
 from tipos_de_pokemon import tipos
 from habilidades import habilidades
-from elegir_pkm import elegirPokemonJ1, elegirPokemonJ2 
+from elegir_pkm import elegirPokemonJ1, elegirPokemonJ2
 from ganadores import win
 
 class Pokemon:
@@ -21,12 +21,12 @@ p5 = Pokemon("La Tota", 15, 100, "Dragon")
 
 def juego():
     while True:
-        j1 = elegirPokemonJ1(p1, p2, p3, p4, p5) 
-        j2 = elegirPokemonJ2(p1, p2, p3, p4, p5) 
+        j1 = elegirPokemonJ1(p1, p2, p3, p4, p5)
+        j2 = elegirPokemonJ2(p1, p2, p3, p4, p5)
         turno = random.randint(0,1)
         while j1 == j2:
-            j1 = elegirPokemonJ1(p1, p2, p3, p4, p5) 
-            j2 = elegirPokemonJ2(p1, p2, p3, p4, p5) 
+            j1 = elegirPokemonJ1(p1, p2, p3, p4, p5)
+            j2 = elegirPokemonJ2(p1, p2, p3, p4, p5)
             print("Opcion invalida")
         while j1.vida > 0 and j2.vida > 0:
             if turno == 1:
