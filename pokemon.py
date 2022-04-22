@@ -1,8 +1,9 @@
 import random
 from tipos_de_pokemon import tipos
 from habilidades import habilidades
-from elegir_pkm import elegirPokemonJ1, elegirPokemonJ2
+from elegir_pkm import elegirPokemonJ1, elegirPokemonJ2 
 from ganadores import win
+from noqueo import probTurno
 
 class Pokemon:
     def __init__(self, name, ataque, vida, tipo):
@@ -21,13 +22,14 @@ p5 = Pokemon("La Tota", 15, 100, "Dragon")
 
 def juego():
     while True:
-        j1 = elegirPokemonJ1(p1, p2, p3, p4, p5)
-        j2 = elegirPokemonJ2(p1, p2, p3, p4, p5)
+        j1 = elegirPokemonJ1(p1, p2, p3, p4, p5) 
+        j2 = elegirPokemonJ2(p1, p2, p3, p4, p5) 
         turno = random.randint(0,1)
         while j1 == j2:
-            j1 = elegirPokemonJ1(p1, p2, p3, p4, p5)
-            j2 = elegirPokemonJ2(p1, p2, p3, p4, p5)
+            j1 = elegirPokemonJ1(p1, p2, p3, p4, p5) 
+            j2 = elegirPokemonJ2(p1, p2, p3, p4, p5) 
             print("Opcion invalida")
+        
         while j1.vida > 0 and j2.vida > 0:
             if turno == 1:
                 print("="*73)
@@ -39,7 +41,9 @@ def juego():
                 print(f"{j1.name} le ha hecho {j1.ataque} puntos de daño a {j2.name}")
                 print(f"{j1.name}: {j1.vida}HP")
                 print(f"{j2.name}: {j2.vida}HP")
-                turno = 0
+                turno = probTurno(15, 1, j1, j2) 
+                
+
             else:
                 print("="*73)
                 print(f"Es el turno de {j2.name}")
@@ -50,7 +54,7 @@ def juego():
                 print(f"{j2.name} le ha hecho {j2.ataque} puntos de daño a {j1.name}")
                 print(f"{j1.name}: {j1.vida}HP")
                 print(f"{j2.name}: {j2.vida}HP")
-                turno = 1
+                turno = probTurno(15, 0, j2, j1)
 
         if j1.vida <= 0:
             win(j2)

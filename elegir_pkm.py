@@ -21,7 +21,7 @@ E - {p5.name}
         j1 = p5
     else:
         print("Opcion incorrecta")
-
+    
     return j1
 
 
@@ -48,5 +48,5 @@ E - {p5.name}
         j2 = p5
     else:
         print("Opcion incorrecta")
-
+    
     return j2
