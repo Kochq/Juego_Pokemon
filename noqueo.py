@@ -1,11 +1,12 @@
 import random
 
-def probTurno(x, y, pj1, pj2):
+
+def probTurno(x, y):
     probabilidad = random.randint(0, 100)
 
     if probabilidad <= x:
         turno = y
-        print(f"{pj1.name} ha paralizado a {pj2.name}")
+        print(f"{j1.name} ha paralizado a {j2.name}")
     else:
         turno = abs(y - 1)
 
