@@ -11,5 +11,5 @@ def probTurno(x, y):
         turno = abs(y - 1)
 
     print(probabilidad)
-    
+
     return turno

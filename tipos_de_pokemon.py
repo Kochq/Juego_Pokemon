@@ -39,5 +39,5 @@ def tipos(jugador1, jugador2):
         efectivo = 1
     elif jugador1.tipo == "Dragon" and jugador2.tipo == "Agua":
         efectivo = 1
-    
+
     return efectivo
